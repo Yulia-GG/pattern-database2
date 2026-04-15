@@ -18,25 +18,25 @@ GROUP BY s.store_id
 HAVING  cnt > 300;
 ```
 
-![image](https://github.com/gralvic/12.4_SQL_PART_2/blob/main/SQL_PART_2_TASK_01.png)
+![image](https://github.com/Yulia-GG/pattern-database2/blob/main/задание1.png)
 
 ### Задание 2.
 
 Получите количество фильмов, продолжительность которых больше средней продолжительности всех фильмов.
 
-```sql
+```
 SELECT COUNT(film_id) 
 FROM film 
 WHERE length > (SELECT AVG(length) FROM film);
 ```
 
-![image](https://github.com/gralvic/12.4_SQL_PART_2/blob/main/SQL_PART_2_TASK_02.png)
+![image](https://github.com/Yulia-GG/pattern-database2/blob/main/задание2.png)
 
 ### Задание 3.
 
 Получите информацию, за какой месяц была получена наибольшая сумма платежей и добавьте информацию по количеству аренд за этот месяц.
 
-```sql
+```
 SELECT DATE_FORMAT(payment_date, '%Y-%m') AS month, SUM(amount), COUNT(rental_id)
 FROM payment 
 GROUP BY month
@@ -44,7 +44,7 @@ ORDER BY SUM(amount) DESC
 LIMIT 1;
 ```
 
-![image](https://github.com/gralvic/12.4_SQL_PART_2/blob/main/SQL_PART_2_TASK_03.png)
+![image](https://github.com/Yulia-GG/pattern-database2/blob/main/задание3.png)
 
 ## Дополнительные задания (со звездочкой*)
 
@@ -60,7 +60,7 @@ FROM payment
 GROUP BY staff_id;
 ```
 
-![image](https://github.com/gralvic/12.4_SQL_PART_2/blob/main/SQL_PART_2_TASK_04.png)
+![image](https://github.com/Yulia-GG/pattern-database2/blob/main/задание4.png)
 
 ### Задание 5*.
 
@@ -74,4 +74,4 @@ LEFT JOIN rental r ON r.inventory_id = i.inventory_id
 WHERE r.rental_id IS NULL;
 ```
 
-![image](https://github.com/gralvic/12.4_SQL_PART_2/blob/main/SQL_PART_2_TASK_05.png)
+![image](https://github.com/Yulia-GG/pattern-database2/blob/main/задание5.png)
